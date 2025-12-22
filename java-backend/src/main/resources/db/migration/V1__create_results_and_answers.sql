@@ -1,0 +1,28 @@
+﻿-- Flyway migration: create results and answers tables
+
+CREATE TABLE IF NOT EXISTS results (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  student_id VARCHAR(255) NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  scores VARCHAR(4000),
+  result VARCHAR(4000),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS answers (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  result_id BIGINT NOT NULL REFERENCES results(id) ON DELETE CASCADE,
+  question_id INT NOT NULL,
+  choice_index INT,
+  choice_text VARCHAR(255),
+  scores VARCHAR(1000),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS audit_logs (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  action VARCHAR(255) NOT NULL,
+  performed_by VARCHAR(255),
+  details VARCHAR(4000),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
