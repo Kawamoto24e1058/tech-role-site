@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: tech-role-site/app
+        working-directory: app
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,7 +29,7 @@ jobs:
         with:
           node-version: 18
           cache: npm
-          cache-dependency-path: tech-role-site/app/package-lock.json
+          cache-dependency-path: app/package-lock.json
 
       - name: Install deps
         run: npm ci
