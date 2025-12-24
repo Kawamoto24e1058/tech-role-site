@@ -1,5 +1,8 @@
 # GitHubへのプッシュ手順
 
+_Deploy trigger note: 2025-12-24 17:47_  
+GitHub Pages再デプロイのトリガー用に更新しました。
+
 Gitでの初期化とコミットは完了しました。次のステップでGitHubにプッシュします。
 
 ## 手順
