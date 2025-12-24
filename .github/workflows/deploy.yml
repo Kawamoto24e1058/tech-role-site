@@ -40,7 +40,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: tech-role-site/app/dist
+          path: app/dist
 
   deploy:
     needs: build
